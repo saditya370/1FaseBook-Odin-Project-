@@ -15,9 +15,17 @@
     <%= form.label :body, style: "display: block" %>
     <%= form.text_area :body %>
   </div>
+<!--
+  <div class= "mb-3">
+  <%= form.label :avatar%> 
+  <%= form.file_field :avatar %>
+  </div>-->
+   <div class= "mb-3">
+  <%= form.label :images%> 
+  <%= form.file_field :images,multiple: true %>
+  </div>
 
-
-  <div>
+  <div  class= "mb-3">
     <%= form.submit %>
   </div>
 <% end %>

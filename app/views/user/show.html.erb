@@ -1,6 +1,13 @@
+<h2> Your Profile </h2>
+
+<p><%= image_tag @a.image,width: "200px"%></p>
+<p>Name: <%=@a.fname%> <%=@a.lname%><p>
+<p>Email:<%=@a.email%></p>
 
 
-<div id="<%= dom_id post %>">
+<%posts = @a.posts.all%>
+<div class= "container">
+<%posts.each do|post|%>
 
  <p class="card-text">
     <strong>By:</strong>
@@ -56,4 +63,5 @@
     <%= post.user_id %>
   </p> 
 </div>
-
+<%end%>
+</div>
