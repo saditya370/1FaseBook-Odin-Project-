@@ -1,0 +1,23 @@
+<h1>hello<h1>
+
+<% if !@pending.empty? %>
+
+<% @pending.each do |p| %>
+            <%if current_user.friend_with?(p.user)%>
+                    <p>Friends</p>
+                    <%=p.user.fname%>
+                    <br>
+            <%else%>
+                    Name: <%=p.user.email%>
+
+                    <%= button_to "Accept",accept_path, params: {id: p.id,confirmed: true}, method: :patch%> 
+            <%end%>
+
+<%end%>
+
+
+<%else%>
+<p>No pending Request</p>
+<%end%>
+
+

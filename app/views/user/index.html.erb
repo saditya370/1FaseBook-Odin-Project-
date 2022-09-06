@@ -1,9 +1,51 @@
 <h2> All Users </h2>
 
-
 <%@user.each do |a|%>
- <p>Name:   <%=a.fname%> <%=a.lname%></p>
- <p>Email: <%=a.email%>
+ <%inv = Invitation.where(user_id: current_user.id,friend_id: a.id)%>
+    <%if a.id != current_user.id%>
 
-<%end%>
+
+<%unless current_user.friend_with?(a)%>
+
+    <p>  
+                <%if a.image.attached?%>
+
+                 <%= image_tag a.image,width: "30px",class: "rounded-circle"%> 
+
+                 <%end%>
+                 <%=a.fname%> <%=a.lname%> ||   <%=a.email%>
+                 <%= button_to"Add Friend",invitations_path(:friend_id=>a.id)%>
+    </p>
+        <%else%>
+
+ <p>Your friend
+            <%if a.image.attached?%>
+                <%= image_tag a.image,width: "30px",class: "rounded-circle"%> 
+            <%end%>
+            <%=a.fname%> <%=a.lname%> ||  Email: <%=a.email%>
+       
+            <%=link_to "unfriend","/invitations/#{inv.ids[0]}", class: "btn btn-primary",
+data: {
+ "turbo-method": :delete}%>
+</p>
+    <%end%>
+    <%end%>
+
+
+<!--
+
+
+
+  <%if Invitation.reacted?(current_user[:id],a.id)%>
+      <td><%=link_to "Cancel Friend Request",class: "btn btn-primary"%></td>
+      <%else%>
+    
+      <td><%=link_to "Add Friend",invitations_path(friends_id: a.id), class: "btn btn-primary",method: :post%></td>
+      <%end%>
+        -->
+    <%end%>
+
+
+
+
 
