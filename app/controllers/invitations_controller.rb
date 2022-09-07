@@ -19,7 +19,7 @@ class InvitationsController < ApplicationController
     # debugger
     @invitation = current_user.invitations.create(invite_params)
     if @invitation.save
-      redirect_to root_path
+      redirect_to request.referrer
     else
       render all_user_path
     end
@@ -29,14 +29,14 @@ class InvitationsController < ApplicationController
     
     @invitation = Invitation.find(params[:id])
     accept = @invitation.update(invite_params)
-    redirect_to root_path
+    redirect_to request.referrer
   end
 
   def destroy
     
     @invitation = Invitation.find(params[:id])
     @invitation.destroy
-    redirect_to root_path
+    redirect_to request.referrer
 
 
   end
