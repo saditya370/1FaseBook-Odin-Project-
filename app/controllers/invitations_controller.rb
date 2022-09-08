@@ -13,7 +13,9 @@ class InvitationsController < ApplicationController
 
   def new
   end
-
+  def show
+      @b= User.find(params[:id])
+  end
   def create
 
     # debugger

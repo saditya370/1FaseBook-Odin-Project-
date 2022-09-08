@@ -10,6 +10,8 @@ class LikesController < ApplicationController
             # redirect_to @like.post
             redirect_to request.referrer
 
+
+
     end
 
 

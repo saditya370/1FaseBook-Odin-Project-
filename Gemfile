@@ -12,6 +12,19 @@ gem "sprockets-rails"
 # Use sqlite3 as the database for Active Record
 
 
+gem 'ransack', :github => 'activerecord-hackery/ransack', :branch => 'main' 
+
+
+
+
+
+# gem 'omniauth'
+# gem 'omniauth-facebook'
+# gem 'omniauth-google-oauth2'
+# gem 'activerecord-session_store'
+
+# gem "omniauth-rails_csrf_protection"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 

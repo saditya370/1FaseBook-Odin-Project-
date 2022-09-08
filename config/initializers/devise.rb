@@ -130,6 +130,22 @@ Devise.setup do |config|
   # from the server. You can disable this option at your own risk.
   # config.clean_up_csrf_token_on_authentication = true
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   # When false, Devise will not attempt to reload routes on eager load.
   # This can reduce the time taken to boot the app but if your application
   # requires the Devise mappings to be loaded during boot time the application
@@ -296,7 +312,17 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  # config.omniauth :facebook,  Rails.application.credentials.dig(:facebook,:facebook_client_id)
+  # Rails.application.credentials.dig(:facebook,:facebook_client_secret),scope: 'public_profile,email'
+
+  # config.omniauth :google_oauth2, Rails.application.credentials.dig(:google,:google_client_id)
+  #   Rails.application.credentials.dig(:google,:google_client_secret),scope: 'userinfo.email,userinfo.profile'
+
+
+  # config.omniauth :facebook,"498469295384577","7e68d3054e13f12906663df3960ce79c"
+  # config.omniauth :google_oauth2, "92520957441-g7l9ij805i0dsf1eilsrns8abjjlk7v8.apps.googleusercontent.com","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"
+
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
