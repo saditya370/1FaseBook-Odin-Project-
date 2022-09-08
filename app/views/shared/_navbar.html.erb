@@ -24,6 +24,9 @@
             <li>
                 <%= link_to "Friend Request", invitations_path,class: "nav-link active"  %>
             </li>
+            <li>
+                  <%=link_to "Profile",user_path(current_user),class: "nav-link active"%>
+            </li>
              <li>
                     <%= link_to "Edit Your Profile",  edit_user_registration_path ,class: "nav-link active" %>
             </li>

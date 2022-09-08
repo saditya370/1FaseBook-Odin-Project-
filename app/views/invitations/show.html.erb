@@ -15,7 +15,7 @@
     <%= post.user.fname %>
   </p>
 
-<div class="card" style="width: 25rem;" >
+<div class="card" style="width: 15rem;" >
 
 
   <div class = "d-flex flex-wrap">
@@ -24,7 +24,7 @@
   <%if post.avatar.attached?%>
     <strong>Avatar</strong><br>
 
-  <%= image_tag post.avatar,width: "200px"%>
+  <%= image_tag post.avatar,width: "200px",style:"height: 8rem;"%>
 <%end%>
 
   <p>
@@ -35,7 +35,7 @@
   <%post.images.each do |image|%>
 
 
-  <%= image_tag image,width: "200px"%>
+  <%= image_tag image,width: "200px",style:"height: 8rem;"%>
   
   <%end%>
 <div class = "mb-3">
