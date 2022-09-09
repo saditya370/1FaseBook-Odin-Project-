@@ -16,7 +16,9 @@
                   <%if user_signed_in?%>
 
               </li>
+           <%if current_user.image.attached?%>
                <%= image_tag current_user.image,width: "50px"%>
+               <%end%>
             </li>
             <li>
               <%= link_to "Find Friends", user_index_path,class: "nav-link active"  %>

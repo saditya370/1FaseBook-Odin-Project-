@@ -1,7 +1,8 @@
 
 <h2> <%=@b.fname%> Profile </h2>
-
+ <%if @b.image.attached?%>
 <p><%= image_tag @b.image,width: "200px"%></p>
+<%end%>
 <p>Name: <%=@b.fname%> <%=@b.lname%><p>
 <p>Email:<%=@b.email%></p>
 

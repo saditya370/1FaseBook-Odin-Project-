@@ -315,8 +315,24 @@ Devise.setup do |config|
   # config.omniauth :facebook,  Rails.application.credentials.dig(:facebook,:facebook_client_id)
   # Rails.application.credentials.dig(:facebook,:facebook_client_secret),scope: 'public_profile,email'
 
-  # config.omniauth :google_oauth2, Rails.application.credentials.dig(:google,:google_client_id)
-  #   Rails.application.credentials.dig(:google,:google_client_secret),scope: 'userinfo.email,userinfo.profile'
+  config.omniauth(
+    :google_oauth2,
+   Rails.application.credentials.google[:client_id],
+   Rails.application.credentials.google[:client_secret],
+   name: "google",
+   access_type: 'offline',
+   image_aspect_ratio: "square",
+   scope: 'email,profile',
+   
+  )
+ 
+  config.omniauth(
+    :facebook,
+   Rails.application.credentials.facebook[:client_id],
+   Rails.application.credentials.facebook[:client_secret]
+  )
+ 
+   #   Rails.application.credentials.dig(:google,:google_client_secret),scope: 'userinfo.email,userinfo.profile'
 
 
   # config.omniauth :facebook,"498469295384577","7e68d3054e13f12906663df3960ce79c"
@@ -359,4 +375,9 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+
+
+
+
+
 end
