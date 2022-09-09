@@ -21,7 +21,7 @@
 
 <%if like.nil?%>
 
-  <%=button_to "Like", likes_path,params:{like:{post_id: post.id}},class: "btn btn-success",method: :post%>
+  <%=button_to "Like", likes_path,params:{like:{post_id: post.id}},class: "btn btn-success",method: :post, remote:true%>
 
 
 <%else%>

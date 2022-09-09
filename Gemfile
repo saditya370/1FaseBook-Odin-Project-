@@ -20,6 +20,7 @@ gem 'ransack', :github => 'activerecord-hackery/ransack', :branch => 'main'
 gem 'omniauth','~>1.9.1'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
+gem 'omniauth-github'
 
 # gem 'activerecord-session_store'
 

@@ -331,6 +331,17 @@ Devise.setup do |config|
    Rails.application.credentials.facebook[:client_id],
    Rails.application.credentials.facebook[:client_secret]
   )
+
+
+  config.omniauth(
+    :github,
+   Rails.application.credentials.github[:client_id],
+   Rails.application.credentials.github[:client_secret],
+   scope: "email",
+   provider_ignores_state: true
+   
+
+  )
  
    #   Rails.application.credentials.dig(:google,:google_client_secret),scope: 'userinfo.email,userinfo.profile'
 
