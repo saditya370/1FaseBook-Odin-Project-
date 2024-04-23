@@ -315,33 +315,33 @@ Devise.setup do |config|
   # config.omniauth :facebook,  Rails.application.credentials.dig(:facebook,:facebook_client_id)
   # Rails.application.credentials.dig(:facebook,:facebook_client_secret),scope: 'public_profile,email'
 
-  config.omniauth(
-    :google_oauth2,
-   Rails.application.credentials.google[:client_id],
-   Rails.application.credentials.google[:client_secret],
-   name: "google",
-   access_type: 'offline',
-   image_aspect_ratio: "square",
-   scope: 'email,profile',
+  # config.omniauth(
+  #   :google_oauth2,
+  #  Rails.application.credentials.google[:client_id],
+  #  Rails.application.credentials.google[:client_secret],
+  #  name: "google",
+  #  access_type: 'offline',
+  #  image_aspect_ratio: "square",
+  #  scope: 'email,profile',
    
-  )
+  # )
  
-  config.omniauth(
-    :facebook,
-   Rails.application.credentials.facebook[:client_id],
-   Rails.application.credentials.facebook[:client_secret]
-  )
+  # config.omniauth(
+  #   :facebook,
+  #  Rails.application.credentials.facebook[:client_id],
+  #  Rails.application.credentials.facebook[:client_secret]
+  # )
 
 
-  config.omniauth(
-    :github,
-   Rails.application.credentials.github[:client_id],
-   Rails.application.credentials.github[:client_secret],
-   scope: "email",
-   provider_ignores_state: true
+  # config.omniauth(
+  #   :github,
+  #  Rails.application.credentials.github[:client_id],
+  #  Rails.application.credentials.github[:client_secret],
+  #  scope: "email",
+  #  provider_ignores_state: true
    
 
-  )
+  # )
  
    #   Rails.application.credentials.dig(:google,:google_client_secret),scope: 'userinfo.email,userinfo.profile'
 
